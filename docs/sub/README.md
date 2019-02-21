@@ -19,6 +19,10 @@ Ezek mind a LogB Standardra épülnek.
 [Facebookon](https://www.facebook.com/logbproject/)
 [Twitteren](https://www.twitter.com/logbproject/)
 
-## 3. Kövess minket?
+## 3. Kövess minket
 
 Ha érdekel, hogy minket épp mi érdekel: [Olivér Twitteren](https://www.twitter.com/remenyo/)
+
+## Kapcsolat
+
+[info@logb.hu](mailto:info@logb.hu)

@@ -30,7 +30,7 @@ module.exports = {
                     }
                 },
                 lastUpdated: 'Frissítve',
-                sidebar: 'true',
+                sidebar: true,
                 nav: [
                     {
                         text: 'Oldalak',

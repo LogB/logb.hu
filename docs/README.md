@@ -1,13 +1,13 @@
 ---
 home: true
-actionText: Értesülni szeretnék az újdonságokról →
-actionLink: /sub/
+actionText: A LogB állapota
+actionLink: /state/
 features:
-- title: ✨Egységes
-  details: A hardver építésétől egészen az adatok elemzéséig segítjük a felhasználókat.
-- title: 🧱Moduláris
-  details: A LogB rendkívül könnyen bővíthető moduláris felépítése miatt. Most éppen a LogB Cloud-on dolgozunk...
-- title: 📄Standardra épül
-  details: Vagyis valami olyasmire. Ha az alapvető dolgokon megegyezünk, nem kell mindenkinek nulláról indulnia és rengeteg más miatt is jó.
+- title: Mi az a LogB?
+  details: A LogB a mérőeszközök elkészítését teszi egyszerűbbé és olcsóbbá. Ez új lehetőségeket nyit meg az oktatásban, és a hobbi-kutatásokban...
+- title: Átfogó szabványra épül
+  details: A hardver megtervezésétől kezdve egészen az adatok elemzéséig segíteni tudjuk a felhasználókat. ez azért lehetséges,mert a LogB egy általunk fejlesztett szabványra épül.
+- title: Moduláris, nyílt forráskódú
+  details: A LogB rendkívül könnyen bővíthető, az egységessége miatt. Az egész projektünk nyílt forráskódú, így bárki tud segíteni a rendszer fejlesztésében.
 footer: 2019 LogB
 ---

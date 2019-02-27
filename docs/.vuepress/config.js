@@ -42,7 +42,7 @@ module.exports = {
                 lastUpdated: 'Frissítve',
                 sidebar: true,
                 nav: [
-                    { text: "Standard", link: '/standard.md' },
+                    { text: "Standard", link: '/guide.md' },
                     {
                         text: 'Oldalak',
                         items: [

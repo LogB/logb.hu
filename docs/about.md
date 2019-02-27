@@ -8,8 +8,8 @@ Szeretnénk egy átfogó keretrendszert építeni az Arduino alapú mérőeszkö
 
 ### Szabvány
 
-Jelenleg egy standardon dolgozunk, amivel meg lehet pontosan határozni a mérőeszközök felépítését.
-[Többet a szabványról](/standard/)
+Jelenleg egy standardon dolgozunk, amivel meg lehet pontosan határozni a mérőeszközök felépítését.\
+[Fejlesztői útmutató](/guide.md)
 
 ---
 

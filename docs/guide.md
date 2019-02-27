@@ -4,7 +4,7 @@
 A fejlesztői útmutató, illetve maga a LogB is fejlesztés alatt áll, kísérleti fázisban van. A rendszer jelenleg nem használható kritikus feladatok ellátására.
 :::
 
-## A LogB Arduinos keretrendszere
+## A LogB Arduinos keretrendszere <Badge text="alpha" type="error"/>
 
 Jelenleg egy standardon dolgozunk, amivel meg lehet pontosan határozni a mérőeszközök felépítését.
 
@@ -21,7 +21,7 @@ Itt lehet meghatározni az:
 
 - ...HAMAROSAN
 
-## LogB standard
+## LogB standard <Badge text="alpha" type="error"/>
 
 ### Bemenetek/szenzorok
 

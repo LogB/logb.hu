@@ -12,14 +12,7 @@ module.exports = {
     ga: 'UA-131029131-1',
     head: [
         ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }],
-        ['script', { type: 'application/ld+json' }, {
-            "@context": "http://schema.org",
-            "@type": "Project",
-            "brand": "LogB",
-            "legalName": "LogB",
-            "email": "info@logb.hu",
-            "logo": "/assets/img/logo.png"
-        }]
+        ['link', { rel: 'manifest', href: '/manifest.json' }],
     ],
     evergreen: true,
     themeConfig: {

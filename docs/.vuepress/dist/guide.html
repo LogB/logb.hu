@@ -6,9 +6,9 @@
     <title>Fejlesztői útmutató | LogB</title>
     <meta name="description" content="Az Arduino alapú moduláris mérőeszközök keretrendszere">
     <link rel="icon" href="/assets/img/favicon.ico">
-  <script type="application/ld+json">[object Object]</script>
+  <link rel="manifest" href="/manifest.json">
     
-    <link rel="preload" href="/assets/css/0.styles.06fd15d7.css" as="style"><link rel="preload" href="/assets/js/app.2abca732.js" as="script"><link rel="preload" href="/assets/js/7.addb2677.js" as="script"><link rel="preload" href="/assets/js/2.2eddf8f1.js" as="script"><link rel="prefetch" href="/assets/js/3.f16490c0.js"><link rel="prefetch" href="/assets/js/4.c9efdef7.js"><link rel="prefetch" href="/assets/js/5.440cfe9c.js"><link rel="prefetch" href="/assets/js/6.b3a23bea.js"><link rel="prefetch" href="/assets/js/8.d34ecd4c.js">
+    <link rel="preload" href="/assets/css/0.styles.06fd15d7.css" as="style"><link rel="preload" href="/assets/js/app.ed1e8157.js" as="script"><link rel="preload" href="/assets/js/7.addb2677.js" as="script"><link rel="preload" href="/assets/js/2.2eddf8f1.js" as="script"><link rel="prefetch" href="/assets/js/3.f16490c0.js"><link rel="prefetch" href="/assets/js/4.c9efdef7.js"><link rel="prefetch" href="/assets/js/5.440cfe9c.js"><link rel="prefetch" href="/assets/js/6.b3a23bea.js"><link rel="prefetch" href="/assets/js/8.d34ecd4c.js">
     <link rel="stylesheet" href="/assets/css/0.styles.06fd15d7.css">
   </head>
   <body>
@@ -44,6 +44,6 @@ Egy LogB kompatibilis bemenetnek szolgáltatnia kell minimum egy, az Arduino kó
 </code></pre></div><div class="warning custom-block"><p class="custom-block-title">Fontos</p> <p>A mértékegységeket a szenzor könyvtára határozza meg. A nyers adatok módosítása máshol történik.</p></div> <div class="tip custom-block"><p class="custom-block-title">Több azonos szenzor</p> <p>Több azonos I2C című egységnél I2C multiplexer-re van szükség.</p></div> <h4 id="bemenet-nevek"><a href="#bemenet-nevek" aria-hidden="true" class="header-anchor">#</a> Bemenet nevek</h4> <p>Példa bemenet:</p> <ul><li>Modell: SHT21</li> <li>3.3 volton működik</li> <li>Csatlakozási módja
 <ul><li>I2C</li> <li>0x40</li></ul></li> <li>Mért adata
 <ul><li>C</li> <li>int</li></ul></li></ul> <p>Ennek a szenzornak a standard-beli neve: <code>SHT21-3V3-I2C-0X40-TEMP</code></p> <div class="tip custom-block"><p class="custom-block-title">Több érték egy egységből</p> <p>Több érték is kiolvasható egy egységből körönként. Minden kiolvasott adat más más szabványnévvel szerepel a LogB-ben:<br> <code>SHT21-3V3-I2C-0X40-TEMP</code><br> <code>SHT21-3V3-I2C-0X40-HUM</code></p></div> <div class="warning custom-block"><p class="custom-block-title">Azonos adat, azonos körben töbször:</p> <p>Egy körben nem kellene többször kikérni ugyan azt az adatot, bár elméletben lehetséges.</p></div></div> <div class="page-edit"><div class="edit-link"><a href="https://github.com/LogB/logb.hu/edit/master/docs/guide.md" target="_blank" rel="noopener noreferrer">Módosítsd ezt az oldalt a GitHubon</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <!----></div> <!----> </div> <!----></div></div>
-    <script src="/assets/js/app.2abca732.js" defer></script><script src="/assets/js/7.addb2677.js" defer></script><script src="/assets/js/2.2eddf8f1.js" defer></script>
+    <script src="/assets/js/app.ed1e8157.js" defer></script><script src="/assets/js/7.addb2677.js" defer></script><script src="/assets/js/2.2eddf8f1.js" defer></script>
   </body>
 </html>

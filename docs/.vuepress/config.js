@@ -42,12 +42,12 @@ module.exports = {
                 lastUpdated: 'Frissítve',
                 sidebar: true,
                 nav: [
-                    { text: "Standard", link: '/guide.md' },
+                    { text: "Fejlesztői útmutató", link: '/guide.md' },
                     {
                         text: 'Oldalak',
                         items: [
-                            { text: 'A LogB-ról', link: '/about.md' },
-                            { text: 'Kövessd a LogB-t', link: '/follow-us.md' },
+                            { text: 'A LogB, célja, állapota', link: '/about.md' },
+                            { text: 'Kövessd a LogB-t!', link: '/follow-us.md' },
                             { text: 'Kapcsolat', link: '/contact-us.md' },
                             { text: 'LogB Cloud', link: 'https://cloud.logb.hu' },
 

@@ -85,10 +85,10 @@ A `set.toComma` alapértelmezett `false`, így ha magyar Excel miatt szükséges
 :::
 
 A beállításokon kívül itt kell elindítani a szenzorokat és a kommunikációkat:
-    - Serial kommukáció setén -> `Serial.begin()`
-    - I2C kommonikáció esetén -> `Wire.begin()`
-    - `LogB Cloud` és `UnixTime()` esetén -> `WiFi.begin()`
-    - Ezeken kívül pedig a kiválasztott szenzorok elindítasa szükséges
+- Serial kommukáció setén -> `Serial.begin()`
+- I2C kommonikáció esetén -> `Wire.begin()`
+- `LogB Cloud` és `UnixTime()` esetén -> `WiFi.begin()`
+- Ezeken kívül pedig a kiválasztott szenzorok elindítasa szükséges
 
 ```c
 Serial.begin(115200); 

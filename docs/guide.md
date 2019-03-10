@@ -31,7 +31,7 @@ Igen, az első kör a `setup()`-ban, a második pedig a `loop()`-ban fut le.
 
 ### Nulladik kör
 
-#### Header fájlok (függvény könyvtárak?? és deklarációk)
+#### Függvény könyvtárak és deklarációk
 
 A kód elején szükséges bizonyos header fileokra hivatkozni:
 
@@ -70,29 +70,42 @@ Itt lehet meghatározni a LogB beállításait:
 
 - Eszköz
   - Nevét
-  - Jelszavát
-- Mentés helyét
+  - Jelszavát 
+- Mentés helyét 
   - a -> Serial
   - b -> SD
   - c -> LogB Cloud
   - ...
+- A fájlban történő elválasztójelet
+- Lehetőség van a tizedespont vesszőre történő cseréjére
+
+::: warning Fontos
+Az elválasztás jele (`set.seperate`) alapértelmezetten `;`. Ha nem szeretnénk megváltoztatni, akkor a `setup()`-ban nem kell beállítani. 
+A `set.toComma` alapértelmezett `false`, így ha magyar Excel miatt szükséges a vessző ezt `true`-ra kell állítani.
+:::
+
+A beállításokon kívül itt kell elindítani a szenzorokat és a kommunikációkat:
+    - Serial kommukáció setén -> `Serial.begin()`
+    - I2C kommonikáció esetén -> `Wire.begin()`
+    - `LogB Cloud` és `UnixTime()` esetén -> `WiFi.begin()`
+    - Ezeken kívül pedig a kiválasztott szenzorok elindítasa szükséges
 
 ```c
-set.timeInterval=2000;
+Serial.begin(115200); 
+Wire.begin();
+WiFi.begin("/* wifi SSID */", "/* wifi jelszava */");
+while (WiFi.status() != WL_CONNECTED) {delay(50);} 
+lightMeter.begin();
 //ezek a LogB Cloud használatához kellenek
 set.device_id="/* eszköz azonosítója */";
 set.pin="/* eszköz jelszava */";
 set.where="ac"; //= Serial & LogB Cloud
+set.seperate=" ";
+set.toComma=true;
 ...
 ```
-::: warning Fontos
-A `LogB Cloud` használatához internet szükséges, ez jelenleg `ESP8266` wifi modul használatával lehetséges.
-Ehhez szükséges a `setup()`-ban a Wifi modul elindítása:
-
-```c
-WiFi.begin("/* wifi SSID */", "/* wifi jelszava */"); 
-...
-
+::: tip Serial kommunikáció
+Serial kommunikációra a `115200`-as sebességet ajánljuk.
 :::
 
 #### <span class="icon" style="color: orange">warning</span> Fejlécek beállítása
@@ -103,7 +116,7 @@ WiFi.begin("/* wifi SSID */", "/* wifi jelszava */");
   - A `UnixTime()` paramétere a GMT-től való eltérés. (Magyarország esetében télen 1, nyáron 2)
 
 ::: warning Fontos
-A `UnixTime()` használatához internet szükséges, ez jelenleg `ESP8266` wifi modul használatával lehetséges. `Wifi.begin()` szükséges!
+A `UnixTime()` használatához internet szükséges, ez jelenleg `ESP8266` wifi modul használatával lehetséges.
 :::
 
 1. `AddNewSensorData()` függvény segítségével megadjuk a fejléc nevét.

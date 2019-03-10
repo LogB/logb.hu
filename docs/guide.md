@@ -85,16 +85,25 @@ set.pin="/* eszköz jelszava */";
 set.where="ac"; //= Serial & LogB Cloud
 ...
 ```
+::: warning Fontos
+A `LogB Cloud` használatához internet szükséges, ez jelenleg `ESP8266` wifi modul használatával lehetséges.
+Ehhez szükséges a `setup()`-ban a Wifi modul elindítása:
+
+```c
+WiFi.begin("/* wifi SSID */", "/* wifi jelszava */"); 
+...
+
+:::
 
 #### <span class="icon" style="color: orange">warning</span> Fejlécek beállítása
 
 1. Lépésben létre kell hozni a mérés nevét a `CreateName()` segítségével.
   
-- A mérés neve az eszköz nevéből és egy számból áll. Az azonosító számhoz javasoljuk az UnixTime() használatát.
+- A mérés neve az eszköz nevéből és egy számból áll. Az azonosító számhoz javasoljuk az `UnixTime()` használatát.
   - A `UnixTime()` paramétere a GMT-től való eltérés. (Magyarország esetében télen 1, nyáron 2)
 
 ::: warning Fontos
-A `UnixTime()` használatához internet szükséges, ez jelenleg `esp8266` wifi modul használatával lehetséges.
+A `UnixTime()` használatához internet szükséges, ez jelenleg `ESP8266` wifi modul használatával lehetséges. `Wifi.begin()` szükséges!
 :::
 
 1. `AddNewSensorData()` függvény segítségével megadjuk a fejléc nevét.

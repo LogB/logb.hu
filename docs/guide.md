@@ -276,6 +276,3 @@ Egy körben nem kellene többször kikérni ugyan azt az adatot, bár elméletbe
 ::: tip Alaplap frissítése
 Pár havonta ajánlott az Alaplap-kezelőben elvégezni a frissítést, így a legújabb `ESP8266`-al rendelkező mikrokontrollereket is használhatjuk.
 :::
-
-példa a képre
-<img :src="$withBase('/assets/img/logo.png')"></img>

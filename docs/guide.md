@@ -100,7 +100,7 @@ lightMeter.begin();
 set.device_id="/* eszköz azonosítója */";
 set.pin="/* eszköz jelszava */";
 set.where="ac"; //= Serial & LogB Cloud
-set.seperate=" ";
+set.seperate="/";
 set.toComma=true;
 ...
 ```

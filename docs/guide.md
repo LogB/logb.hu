@@ -68,7 +68,6 @@ BH1750 lightMeter;
 
 Itt lehet meghatározni a LogB beállításait:
 
-- Időközt
 - Eszköz
   - Nevét
   - Jelszavát

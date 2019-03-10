@@ -25,10 +25,10 @@ Jelenleg egy standardon dolgozunk, amivel meg lehet pontosan határozni a mérő
 | ------------------------------------------- | :--------------: |
 | Standard 1.0                                |   :full_moon:    |
 | Arduino code 1.0                            |   :full_moon:    |
-| Dev Docs                                    |   :red_circle:   |
+| Dev Docs                                    |   :full_moon:    |
 | CodeGenerator                               |   :red_circle:   |
 | ConfigGenerator                             |   :red_circle:   |
-| LogB Cloud <Badge text="beta" type="warn"/> | :deciduous_tree: |
+| LogB Cloud <Badge text="Beta" type="warn"/> | :deciduous_tree: |
 | Videos                                      |   :full_moon:    |
 | Bee logger                                  |   :red_circle:   |
 | LogB MACI                                   |   :red_circle:   |

@@ -4,8 +4,19 @@ publish = "docs/.vuepress/dist"
 command = "yarn docs:build"
 
 [[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+force = true
 
-http://vibrant-pike-4dd77d.netlify.com/* https://logb.hu/:splat 302!
-https://vibrant-pike-4dd77d.netlify.com/* https://logb.hu/:splat 302!
-/*    /index.html   200!
+[[redirects]]
+from = "http://vibrant-pike-4dd77d.netlify.com/*"
+to = "https://logb.hu/:splat"
+status = 302
+force = true
 
+[[redirects]]
+from = "https://vibrant-pike-4dd77d.netlify.com/*"
+to = "https://logb.hu/:splat"
+status = 302
+force = true

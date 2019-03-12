@@ -33,7 +33,7 @@ module.exports = {
         nav: [
             { text: "Fejlesztői útmutató", link: '/guide.md' },
             {
-                text: 'további oldalak',
+                text: 'További oldalak',
                 items: [
                     { text: 'A LogB, célja, állapota', link: '/about.md' },
                     { text: 'Kövessd a LogB-t!', link: '/follow-us.md' },

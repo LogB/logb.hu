@@ -21,15 +21,15 @@ Jelenleg egy standardon dolgozunk, amivel meg lehet pontosan határozni a mérő
 
 ---
 
-| Topic                                       |      State       |
-| ------------------------------------------- | :--------------: |
-| Standard 1.0                                |   :full_moon:    |
-| Arduino code 1.0                            |   :full_moon:    |
-| Dev Docs                                    |   :full_moon:    |
-| CodeGenerator                               |   :red_circle:   |
-| ConfigGenerator                             |   :red_circle:   |
-| LogB Cloud <Badge text="Beta" type="warn"/> | :deciduous_tree: |
-| Videos                                      |   :full_moon:    |
-| Bee logger                                  |   :red_circle:   |
-| LogB MACI                                   |   :red_circle:   |
-| Voltage Sensor                              |   :red_circle:   |
+| Topic | Állapot |  |
+| ----- | :-----: ||
+| Standard 1.0                                |   :full_moon:    | |
+| Arduino kód 1.0                             |   :full_moon:    | |
+| Dev Docs                                    |   :full_moon:    | |
+| KódGenerátor                                |   :red_circle:   | |
+| ConfigGenerátor                             |   :red_circle:   | |
+| LogB Cloud <Badge text="Beta" type="warn"/> | :deciduous_tree: | |
+| Videók                                      |   :full_moon:    | |
+| Méhes logger                                |   :red_circle:   | |
+| LogB MACI                                   |   :red_circle:   | |
+| Feszültség szenzor                          |   :red_circle:   | |

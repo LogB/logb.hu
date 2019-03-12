@@ -4,7 +4,7 @@
 
 Hamarosan rengeteg tartalom fog ezen a weboldalom megjelenni. A [LogB Cloud](https://cloud.logb.hu) bétába lépett, így mostantól több időt tudunk fordítunk az alapok befejezésére:
 
-[A LogB állapota](/state/)
+[A LogB állapota](/about/)
 
 ## 2. Kövessd a LogB-t
 

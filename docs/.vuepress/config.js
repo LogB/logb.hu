@@ -10,7 +10,6 @@ module.exports = {
     title: 'LogB',
     description: 'Az Arduino alapú moduláris mérőeszközök keretrendszere',
     ga: 'UA-131029131-1',
-    serviceWorker: true,
     head: [
         ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }],
         ['link', { rel: 'manifest', href: '/manifest.json' }],
@@ -24,12 +23,6 @@ module.exports = {
         docsDir: 'docs',
         editLinks: true,
         editLinkText: 'Módosítsd ezt az oldalt a GitHub-on',
-        serviceWorker: {
-            updatePopup: {
-                message: "Új tartalom elérehtő",
-                buttonText: "Frissítés"
-            }
-        },
         nav: [
             { text: "Fejlesztői útmutató", link: '/guide.md' },
             {
@@ -44,6 +37,17 @@ module.exports = {
             }
         ],
     },
+    plugins: [
+        ['@vuepress/clean-urls'],
+        ['@vuepress/back-to-top'],
+        ['@vuepress/pwa', {
+            serviceWorker: true,
+            updatePopup: {
+                message: "Új tartalom elérehtő",
+                buttonText: "Frissítés"
+            }
+        }]
+    ]
     // '/en/': {
     //     label: 'English',
     //     lastUpdated: true,

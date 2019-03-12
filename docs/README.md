@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: Fejlesztői útmutató
-actionLink: /guide.md
+actionLink: /about
 features:
 - title: Mi az a LogB?
   details: A LogB a mérőeszközök elkészítését teszi egyszerűbbé és olcsóbbá. Ez új lehetőségeket nyit meg az oktatásban, és a hobbi-kutatásokban...

@@ -28,9 +28,10 @@ module.exports = {
             {
                 text: 'További oldalak',
                 items: [
-                    { text: 'A LogB, célja, állapota', link: '/about.md' },
-                    { text: 'Kövessd a LogB-t!', link: '/follow-us.md' },
-                    { text: 'Kapcsolat', link: '/contact-us.md' },
+                    { text: 'A LogB-ről', link: '/about' },
+                    { text: 'A LogB szolgáltatásainak állapota', link: '/status' },
+                    { text: 'Kövessd a LogB-t!', link: '/follow-us' },
+                    { text: 'Kapcsolat', link: '/contact' },
                     { text: 'LogB Cloud', link: 'https://cloud.logb.hu' },
 
                 ]

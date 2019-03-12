@@ -1,37 +1,38 @@
 # A projektről
 
-## Céljaink
+:construction: Még nincs az oldalon minden, amit szeretnénk hogy itt legyen. :construction:
 
-### LogB projekt
+## Mi az a LogB?
 
-Szeretnénk egy átfogó keretrendszert építeni az Arduino alapú mérőeszközökhöz.
+A LogB az Arduino alapú mérőeszközöknek átfogó keretrendszere.
 
-### Szabvány
+A LogB segít a:
 
-Jelenleg egy standardon dolgozunk, amivel meg lehet pontosan határozni a mérőeszközök felépítését.\
+- Ötletelésben
+- Projekt tervezésben
+- Mérőeszköz
+  - Tervezésében
+  - Programozásában
+  - Megépítésében
+- Mérések
+  - Elemzésében
+  - Megosztásában
+
+## LogB Standard
+
+Jelenleg egy szabványon dolgozunk, amivel meg lehet pontosan határozni a mérőeszközök felépítését.\
 [Fejlesztői útmutató](/guide.md)
 
----
+## Miért kell a Standard?
 
-## The current state of LogB
+- Időt takarít meg
+  - Egységes, moduláris rendszer.
+  - Közösség által fejleszthető
+  - Nem kell újra és újra elkészíteni egy funkciót
+  - [Nem kell tudni programozni](#nem-kell-tudni-programozni) a LogB felhasználásához
+- Több embert tudunk elérni
 
-|    Waits     | Work started |       Done       |
-| :----------: | :----------: | :--------------: |
-| :red_circle: | :full_moon:  | :deciduous_tree: |
+### Nem kell tudni programozni.
 
----
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/44c85e3a-d9e6-4de0-87f5-bdd676049de0/deploy-status)](https://app.netlify.com/sites/vibrant-pike-4dd77d/deploys)
-
-| Topic | Állapot |  |
-| ----- | :-----: ||
-| Standard 1.0                                |   :full_moon:    | |
-| Arduino kód 1.0                             |   :full_moon:    | |
-| Dev Docs                                    |   :full_moon:    | |
-| KódGenerátor                                |   :red_circle:   | |
-| ConfigGenerátor                             |   :red_circle:   | |
-| LogB Cloud <Badge text="Beta" type="warn"/> | :deciduous_tree: | |
-| Videók                                      |   :full_moon:    | |
-| Méhes logger                                |   :red_circle:   | |
-| LogB MACI                                   |   :red_circle:   | |
-| Feszültség szenzor                          |   :red_circle:   | |
+Az Arduinora írandó program automatikusan generálható.\
+Sok ember emiatt nem fogott bele a saját projektjébe. Eddig.

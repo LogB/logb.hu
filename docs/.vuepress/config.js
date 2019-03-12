@@ -28,10 +28,10 @@ module.exports = {
             {
                 text: 'További oldalak',
                 items: [
-                    { text: 'A LogB-ről', link: '/about' },
-                    { text: 'A LogB szolgáltatásainak állapota', link: '/status' },
-                    { text: 'Kövessd a LogB-t!', link: '/follow-us' },
-                    { text: 'Kapcsolat', link: '/contact' },
+                    { text: 'A LogB-ről', link: '/about.md' },
+                    { text: 'A LogB szolgáltatásainak állapota', link: '/status.md' },
+                    { text: 'Kövessd a LogB-t!', link: '/follow-us.md' },
+                    { text: 'Kapcsolat', link: '/contact.md' },
                     { text: 'LogB Cloud', link: 'https://cloud.logb.hu' },
 
                 ]
@@ -39,7 +39,6 @@ module.exports = {
         ],
     },
     plugins: [
-        ['@vuepress/clean-urls'],
         ['@vuepress/back-to-top'],
         ['@vuepress/pwa', {
             serviceWorker: true,

@@ -5,7 +5,7 @@ sidebar: auto
 # Fejlesztői útmutató
 
 ::: warning Előzetes betekintés
-A fejlesztői útmutató, illetve maga a LogB is fejlesztés alatt áll. A rendszer jelenleg nem használható kritikus feladatok ellátására. [Projektek státusza](/status)
+A fejlesztői útmutató, illetve maga a LogB is fejlesztés alatt áll. A rendszer jelenleg nem használható kritikus feladatok ellátására. [Projektek státusza](/status.md)
 :::
 
 ## A LogB Arduino-s keretrendszere <Badge text="alpha" type="error"/>

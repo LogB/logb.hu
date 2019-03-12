@@ -21,6 +21,8 @@ Jelenleg egy standardon dolgozunk, amivel meg lehet pontosan határozni a mérő
 
 ---
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/44c85e3a-d9e6-4de0-87f5-bdd676049de0/deploy-status)](https://app.netlify.com/sites/vibrant-pike-4dd77d/deploys)
+
 | Topic | Állapot |  |
 | ----- | :-----: ||
 | Standard 1.0                                |   :full_moon:    | |

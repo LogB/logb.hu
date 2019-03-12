@@ -1,0 +1,7 @@
+[build]
+base = "/"
+publish = "docs/.vuepress/dist"
+command = "yarn docs:build"
+
+[[redirects]]
+  /*    /index.html   200

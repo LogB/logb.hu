@@ -8,3 +8,21 @@ from = "http://logb.netlify.com/*"
 to = "https://logb.hu/:splat"
 status = 302
 force = true
+
+[[redirects]]
+from = "https://logb.netlify.com/*"
+to = "https://logb.hu"
+status = 302
+force = true
+
+[[redirects]]
+from = "https://logb.netlify.com"
+to = "https://logb.hu"
+status = 302
+force = true
+
+[[redirects]]
+from = "http://logb.netlify.com"
+to = "https://logb.hu"
+status = 302
+force = true

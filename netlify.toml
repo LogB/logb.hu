@@ -7,9 +7,16 @@ command = "yarn docs:build"
 from = "/*"
 to = "/index.html"
 status = 200
+force = true
 
 [[redirects]]
-from = "*vibrant-pike-4dd77d.netlify.com/*"
+from = "https://vibrant-pike-4dd77d.netlify.com*"
+to = "https://logb.hu/:splat"
+status = 302
+force = true
+
+[[redirects]]
+from = "http://vibrant-pike-4dd77d.netlify.com*"
 to = "https://logb.hu/:splat"
 status = 302
 force = true

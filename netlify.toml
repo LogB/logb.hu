@@ -1,9 +1,11 @@
 [build]
+
 publish = "docs/.vuepress/dist"
 command = "yarn docs:build"
 
 [[redirects]]
-  /*    /index.html   200!
+
 http://vibrant-pike-4dd77d.netlify.com/* https://logb.hu/:splat 302!
 https://vibrant-pike-4dd77d.netlify.com/* https://logb.hu/:splat 302!
+/*    /index.html   200!
 

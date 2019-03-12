@@ -3,5 +3,5 @@ publish = "docs/.vuepress/dist"
 command = "yarn docs:build"
 
 [[redirects]]
-  /*    /index.html   200
   *vibrant-pike-4dd77d.netlify.com/* https://logb.hu/$2 302!
+  /*    /index.html   200!

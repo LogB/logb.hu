@@ -1,13 +1,13 @@
 ---
 home: true
-actionText: Fejlesztői útmutató
-actionLink: /guide.md
+actionText: A LogB-ről...
+actionLink: /about.md
 features:
-- title: Mi az a LogB?
-  details: A LogB a mérőeszközök elkészítését teszi egyszerűbbé és olcsóbbá. Ez új lehetőségeket nyit meg az oktatásban, és a hobbi-kutatásokban...
-- title: Átfogó szabványra épül
-  details: A hardver megtervezésétől kezdve egészen az adatok elemzéséig segíteni tudjuk a felhasználókat. ez azért lehetséges,mert a LogB egy általunk fejlesztett szabványra épül.
-- title: Moduláris, nyílt forráskódú
-  details: A LogB rendkívül könnyen bővíthető, az egységessége miatt. Az egész projektünk nyílt forráskódú, így bárki tud segíteni a rendszer fejlesztésében.
+- title: Egységes
+  details: A hardver megtervezésétől kezdve egészen az adatok elemzéséig segíteni tudjuk a felhasználókat a LogB standardra építve.
+- title: Moduláris
+  details: A LogB rendkívül könnyen bővíthető: a rendszer moduláris felépítésű, így könnyen fejleszthető.
+- title: Nyilt forráskódú
+  details: A LogB nyílt forráskódú, a közösségi fejlesztés magát a közösséget is fejleszti.
 footer: 2019 LogB
 ---

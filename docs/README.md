@@ -8,6 +8,6 @@ features:
 - title: Moduláris
   details: A LogB rendkívül könnyen bővíthető, fejleszthető, moduláris és egységes felépítése miatt.
 - title: Nyilt forráskódú
-  details: "Fejlesszük közösen, használjuk közösen\: A LogB nyílt forrás kódú, hogy gyorsabban, többre jussunk."
+  details: Fejlesszük közösen, használjuk közösen. A LogB nyílt forráskódú, hogy gyorsabban, többre jussunk.
 footer: 2019 LogB
 ---

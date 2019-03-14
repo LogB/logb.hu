@@ -1,6 +1,6 @@
 ---
 home: true
-actionText: Mi az a LogB?
+actionText: Tovább
 actionLink: /about.md
 features:
 - title: Egységes

@@ -1,13 +1,13 @@
 ---
 home: true
-actionText: A LogB-ről...
+actionText: Mi az a LogB?
 actionLink: /about.md
 features:
 - title: Egységes
-  details: A hardver megtervezésétől kezdve egészen az adatok elemzéséig segíteni tudjuk a felhasználókat a LogB standardra építve.
+  details: A hardver megtervezésétől kezdve egészen az adatok elemzéséig segíteni tudjuk a felhasználókat.
 - title: Moduláris
-  details: A LogB rendkívül könnyen bővíthető: a rendszer moduláris felépítésű, így könnyen fejleszthető.
+  details: A LogB rendkívül könnyen bővíthető, fejleszthető, moduláris és egységes felépítése miatt.
 - title: Nyilt forráskódú
-  details: A LogB nyílt forráskódú, a közösségi fejlesztés magát a közösséget is fejleszti.
+  details: Fejlesszük közösen, használjuk közösen: A LogB nyílt forrás kódú, hogy gyorsabban, többre jussunk.
 footer: 2019 LogB
 ---

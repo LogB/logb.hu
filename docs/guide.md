@@ -4,8 +4,8 @@ sidebar: auto
 
 # Fejlesztői útmutató
 
-::: warning Előzetes betekintés
-A fejlesztői útmutató, illetve maga a LogB is fejlesztés alatt áll. A rendszer jelenleg nem használható kritikus feladatok ellátására. [Projektek státusza](/status.md)
+::: warning Előzetes betekintés :construction:
+A fejlesztői útmutató, illetve maga a LogB is fejlesztés alatt áll. A rendszer jelenleg nem használható kritikus feladatok ellátására. [Projektek státusza](/status.md#projektek-allapota)
 :::
 
 ## A LogB Arduino-s keretrendszere <Badge text="alpha" type="error"/>
@@ -31,9 +31,9 @@ Igen, az első kör a `setup()`-ban, a második pedig a `loop()`-ban fut le.
 
 #### Függvény könyvtárak és deklarációk
 
-A kód elején szükséges bizonyos header fileokra hivatkozni:
+A kód elején szükséges bizonyos header fájlokra hivatkozni:
 
-1. LogB Arduino könyvtárat include-álni
+1. LogB Arduino könyvtárat include-olni
 2. Használni kívánt szenzor könyvtárát
     - Amennyiben szükséges definiálni kell a szenzort.
 3. A `set` globális változó deklarálása
@@ -103,7 +103,7 @@ set.toComma=true;
 ...
 ```
 ::: tip Serial kommunikáció
-Serial kommunikációra a `115200`-as sebességet ajánljuk.
+A soros kommunikáció baud rátája 115200-re van állítva alapból, de igény esetén , megváltoztatható.
 :::
 
 #### <span class="icon" style="color: orange">warning</span> Fejlécek beállítása
@@ -196,9 +196,9 @@ A szenzor összes (mérésnél illetve a hardver beépítésénél) fontos tulaj
 - Feszültség
 - Kapcsolódás
   - Típusa
-  - címe (opcionális)
-- Mérés
-  - Mértékegység (opcionális)
+  - címe (opcionális, i2c esetében)
+- Mérés (= beérkező adat)
+  - Mértékegysége
   - Változó típusa
 
 Egy példa:
@@ -229,7 +229,7 @@ A mértékegységeket a szenzor könyvtára határozza meg. A nyers adatok módo
 :::
 
 ::: tip Több azonos szenzor
-Több azonos I2C című egységnél I2C multiplexer-re van szükség.
+Több azonos I2C című egységnél I2C multiplexer-re van szükség, vagy meg kell szakítani a mérés idejére a többi azonos című elemet.
 :::
 
 #### Bemenet nevek
@@ -240,20 +240,20 @@ Példa bemenet:
 - 3.3 volton működik
 - Csatlakozási módja
   - I2C
-  - 0x40
 - Mért adata
   - Hőmérséklet
 
-Ennek a szenzornak a standard-beli neve: `SHT21-3V3-I2C-0X40-TEMP`
+Ennek a szenzornak a standard-beli neve: `SHT21-3V3-I2C-TEMP`
 
 ::: tip Több érték egy egységből
 Több érték is kiolvasható egy egységből körönként. Minden kiolvasott adat más más szabványnévvel szerepel a LogB-ben:\
-`SHT21-3V3-I2C-0X40-TEMP`\
-`SHT21-3V3-I2C-0X40-HUM`
+`SHT21-3V3-I2C-TEMP`\
+`SHT21-3V3-I2C-HUM`
 :::
 
 ::: warning Azonos adat, azonos körben töbször:
-Egy körben nem kellene többször kikérni ugyan azt az adatot, bár elméletben lehetséges.
+Ha szükség van rá lehetséges ugyan azt a szenzornak ugyan azt a mért adatát kikérni egy körben, de az azonosítójának egyedinek kell lennie, különben felülírja az előző mért adatot! \
+(Egy körben nem kéne kikérni ugyan azt az adatot, hiszen a mérés pillanatszerű.)
 :::
 
 ## ESP8266-os alaplapok használata

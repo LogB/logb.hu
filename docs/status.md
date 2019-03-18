@@ -34,3 +34,4 @@
 - [DS1307RTC](https://www.pjrc.com/teensy/td_libs_DS1307RTC.html)
 - [Streaming](http://arduiniana.org/libraries/streaming/)
 - [PString](http://arduiniana.org/libraries/PString/)
+- Watchdog timer / sleep?

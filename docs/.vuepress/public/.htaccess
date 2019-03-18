@@ -1,6 +1,0 @@
-RewriteEngine On
-RewriteCond %{HTTPS} off [OR]
-RewriteCond %{HTTP_HOST} ^www\. [NC]
-RewriteRule ^ https://logb.hu%{REQUEST_URI} [L,NE,R=302]
-
-ErrorDocument 404 /404.html

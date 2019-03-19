@@ -15,23 +15,23 @@
 | :----------: | :--------------: | :----------------: |
 | :red_circle: |   :full_moon:    | :four_leaf_clover: |
 
-| Topic                                           |      Állapot       | Info                                                             |
-| ----------------------------------------------- | :----------------: | ---------------------------------------------------------------- |
-| Standard 1.0                                    |    :full_moon:     | [LogB Standard](/guide.md#logb-standard)                         |
-| Arduino kód 1.0                                 |    :full_moon:     | [LogB for Arduino](/guide.mda-logb-arduino-s-keretrendszere)     |
-| 📙 Dokumentáció                                 |    :full_moon:     | [Fejlesztői útmutató](/guide.md#a-logb-arduino-s-keretrendszere) |
-| KódGenerátor                                    |    :red_circle:    | Standardra épül...                                               |
-| ConfigGenerátor                                 |    :red_circle:    | Standardra épül...                                               |
-| ☁️ LogB Cloud  <Badge text="Beta" type="warn"/> | :four_leaf_clover: | [LogB Cloud](https://cloud.logb.hu)                              |
-| Videók                                          |    :full_moon:     | Készül: "Mi az a LogB?"                                          |
-| Méhes logger                                    |    :red_circle:    | -                                                                |
-| LogB MACI                                       |    :red_circle:    | -                                                                |
-| Feszültség szenzor                              |    :red_circle:    | -                                                                |
+| Topic                                        |      Állapot       | Info                                                             |
+| -------------------------------------------- | :----------------: | ---------------------------------------------------------------- |
+| Standard 1.0                                 |    :full_moon:     | [LogB Standard](/guide.md#logb-standard)                         |
+| Arduino kód 1.0                              |    :full_moon:     | [LogB for Arduino](/guide.mda-logb-arduino-s-keretrendszere)     |
+| Dokumentáció                                 |    :full_moon:     | [Fejlesztői útmutató](/guide.md#a-logb-arduino-s-keretrendszere) |
+| KódGenerátor                                 |    :red_circle:    | Standardra épül...                                               |
+| ConfigGenerátor                              |    :red_circle:    | Standardra épül...                                               |
+| LogB Cloud  <Badge text="Beta" type="warn"/> | :four_leaf_clover: | [LogB Cloud](https://cloud.logb.hu)                              |
+| Videók                                       |    :full_moon:     | Készül: "Mi az a LogB?"                                          |
+| Méhes logger                                 |    :red_circle:    | -                                                                |
+| LogB MACI                                    |    :red_circle:    | -                                                                |
+| Feszültség szenzor                           |    :red_circle:    | -                                                                |
 
-## Könyvtárak, funkciók amik lehet hogy segítségünkre lesz a jövőben
+## Könyvtárak, funkciók amik lehet hogy segítségünkre lesznek a jövőben
 
 - [Chrono](http://sofapirate.github.io/Chrono/)
 - [DS1307RTC](https://www.pjrc.com/teensy/td_libs_DS1307RTC.html)
 - [Streaming](http://arduiniana.org/libraries/streaming/)
 - [PString](http://arduiniana.org/libraries/PString/)
-- Watchdog timer / sleep?
+- [Watchdog timer / sleep?](https://learn.sparkfun.com/tutorials/reducing-arduino-power-consumption/all#saving-power-with-software)

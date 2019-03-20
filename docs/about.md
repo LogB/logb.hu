@@ -1,6 +1,6 @@
 # A projektről
 
-:construction: Még nincs az oldalon minden, amit szeretnénk hogy itt legyen. :construction:
+:construction: Még nincs az oldalon minden, ami szeretnénk hogy itt legyen. :construction:
 
 ## Mi az a LogB?
 

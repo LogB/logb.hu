@@ -69,6 +69,7 @@ Itt lehet meghatározni a LogB beállításait:
 - Eszköz
   - Nevét
   - Jelszavát 
+- A mérési időközt
 - Mentés helyét 
   - a -> Serial
   - b -> SD
@@ -76,6 +77,11 @@ Itt lehet meghatározni a LogB beállításait:
   - ...
 - A fájlban történő elválasztójelet
 - Lehetőség van a tizedespont vesszőre történő cseréjére
+- Itt kell lértehozni a fájl nevét
+
+::: warning Fontos
+Ha a kirás csak `Serial`-ra történik nem szükséges fájl nevet lértehozni.
+:::
 
 ::: warning Fontos
 Az elválasztás jele (`set.seperate`) alapértelmezetten `;`. Ha nem szeretnénk megváltoztatni, akkor a `setup()`-ban nem kell beállítani. 
@@ -88,6 +94,15 @@ A beállításokon kívül itt kell elindítani a szenzorokat és a kommunikáci
 - `LogB Cloud` és `UnixTime()` esetén -> `WiFi.begin()`
 - Ezeken kívül pedig a kiválasztott szenzorok elindítasa szükséges
 
+A mérés nevét a `CreateName()` segítségével lehet elkészíteni.
+
+- A mérés neve az eszköz nevéből és egy számból áll. Az azonosító számhoz javasoljuk az `UnixTime()` használatát.
+  - A `UnixTime()` paramétere a GMT-től való eltérés. (Magyarország esetében télen 1, nyáron 2)
+
+::: warning Fontos
+A `UnixTime()` használatához internet szükséges, ez jelenleg `ESP8266` wifi modul használatával lehetséges.
+:::
+
 ```c
 Serial.begin(115200); 
 Wire.begin();
@@ -98,39 +113,17 @@ lightMeter.begin();
 set.device_id="/* eszköz azonosítója */";
 set.pin="/* eszköz jelszava */";
 set.where="ac"; //= Serial & LogB Cloud
+set.timeIntervall=2000; // 2 mp
 set.seperate="/";
 set.toComma=true;
+CreateName(UnixTime(1)); // GMT+1
 ...
 ```
 ::: tip Serial kommunikáció
 A soros kommunikáció baud rátája 115200-re van állítva alapból, de igény esetén , megváltoztatható.
 :::
 
-#### <span class="icon" style="color: orange">warning</span> Fejlécek beállítása
 
-1. Lépésben létre kell hozni a mérés nevét a `CreateName()` segítségével.
-  
-- A mérés neve az eszköz nevéből és egy számból áll. Az azonosító számhoz javasoljuk az `UnixTime()` használatát.
-  - A `UnixTime()` paramétere a GMT-től való eltérés. (Magyarország esetében télen 1, nyáron 2)
-
-::: warning Fontos
-A `UnixTime()` használatához internet szükséges, ez jelenleg `ESP8266` wifi modul használatával lehetséges.
-:::
-
-1. `AddNewSensorData()` függvény segítségével megadjuk a fejléc nevét.
-
-- Első paraméter a standard név
-  - Második paraméter a fejléc neve
-
-1. A `Send()` függvény segítségével kiküldjük a fejlécet az előre meghatározott kimenetre.
-
-```c
-CreateName(UnixTime(1)); // GMT+1
-AddNewHeaderParam("SHT21-I2C-3V3-TEMP-C", "Hőmérséklet");
-AddNewHeaderParam("SHT21-I2C-3V3-HUM-%", "Páratartalom");
-AddNewHeaderParam("BH1750-I2C-3V3-LIGHT-lx", "Fénymennyiség");
-Send();
-```
 
 ### Második kör
 
@@ -144,7 +137,7 @@ Ehhez ajánljuk az alábbi metódust:
 ```c
 set.currentMillis = millis();
 
-if (set.currentMillis - set.previousMillis >= 42000){ //42 másodperc
+if (set.currentMillis - set.previousMillis >= set.timeIntervall){
 set.previousMillis = set.currentMillis;
 /* A szenzorok értékeinek kiolvasása itt történik */
 }
@@ -155,23 +148,28 @@ Ha a megadott miliszekundumnyi időtartamnál tovább tart a mérés, azonal elk
 Ha még nem érte el, várakozik amíg eléri.
 
 :::
-
-1. Be kell állítanunk az időt a `Time()` segítségével.
-    - A függvény paramétere Unix idő. Ehhez a már fentebb említett `UnixTime()` függvényt is használhatjuk.
-2. Az `AddNewSensorData()` függvény segítségével tároljuk a kiolvasott szenzor értékeket.
+1. Az `AddData()` függvény segítségével tároljuk a kiolvasott szenzor értékeket.
     - Első paraméternek a szensor standard nevét kell használni.
-    - Második paraméter pedig a szenzor kiolvasott értéke `String`-be konvertálva.
+    - Második paraméter a használni kívánt fejléc.
+    - Harmadik paraméter pedig a szenzor kiolvasott értéke `String`-be konvertálva.
+
     ::: tip Mentett szenzor érték változtatása
     Mentés előtt lehetőség van a kiolvasott érték megváltoztatására.
     :::
 
-3. Ha az összes szenzor értéket mentettük történhet az adatok elküldése a `Send()` segítségével.
+ ::: warning Fontos
+ Az első `AddData()`-ban be kell állítani az időt. Ezt úgy tehetjük meg, hogy a `Time()`-nak egy `DateTime`-ot adunk.
+- Ehhez a már fentebb említett `UnixTime()` függvényt is használhatjuk.
+- Természetesen RTC-ből nyert idő is használható. (`rtc.now()`)
+- Haa nincs időmérésre lehetőségünk a mérés indításától eltelt másodpercekért a `NoTime()` függvényt kell a `Time()`-ba írni.
+:::
+
+2. Ha az összes szenzor értéket mentettük történhet az adatok elküldése a `Send()` segítségével.
 
 ```c
-Time(UnixTime(1));
-AddNewSensorData("SHT21-I2C-3V3-TEMP-C", String(SHT2x.GetTemperature()));
-AddNewSensorData("SHT21-I2C-3V3-HUM-%", String(SHT2x.GetHumidity()));
-AddNewSensorData("BH1750-I2C-3V3-LIGHT-lx", String(lightMeter.readLightLevel()));
+AddData("NTP", "Date", Time(UnixTime()));
+AddData("SHT21-Hum","Humidity", String(SHT2x.GetHumidity()));
+AddData("SHT21-Temp","Temperature", String(SHT2x.GetTemperature()));
 Send();
 ```
 

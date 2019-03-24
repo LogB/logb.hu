@@ -26,3 +26,27 @@ from = "http://logb.netlify.com"
 to = "https://logb.hu"
 status = 302
 force = true
+
+[[redirects]]
+from = "http://www.logb.hu/*"
+to = "https://logb.hu/:splat"
+status = 302
+force = true
+
+[[redirects]]
+from = "https://www.logb.hu/*"
+to = "https://logb.hu"
+status = 302
+force = true
+
+[[redirects]]
+from = "https://www.logb.hu"
+to = "https://logb.hu"
+status = 302
+force = true
+
+[[redirects]]
+from = "http://www.logb.hu"
+to = "https://logb.hu"
+status = 302
+force = true

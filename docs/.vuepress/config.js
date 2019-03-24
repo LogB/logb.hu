@@ -9,7 +9,6 @@ module.exports = {
     // },
     title: 'LogB',
     description: 'Az Arduino alapú moduláris mérőeszközök keretrendszere',
-    ga: 'UA-131029131-1',
     head: [
         ['link', { rel: 'icon', href: '/assets/img/favicon.ico' }],
         ['link', { rel: 'manifest', href: '/manifest.json' }],
@@ -46,7 +45,16 @@ module.exports = {
                 message: "Új tartalom elérehtő",
                 buttonText: "Frissítés"
             }
-        }]
+        }],
+        [
+            '@vuepress/google-analytics',
+            {
+                'ga': 'UA-131029131-1'
+            }
+        ],
+        [
+            'flowchart'
+        ]
     ]
     // '/en/': {
     //     label: 'English',

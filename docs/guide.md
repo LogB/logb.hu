@@ -68,9 +68,9 @@ Itt lehet meghatározni a LogB beállításait:
 
 - Eszköz
   - Nevét
-  - Jelszavát 
+  - Jelszavát
 - A mérési időközt
-- Mentés helyét 
+- Mentés helyét
   - a -> Serial
   - b -> SD
   - c -> LogB Cloud
@@ -89,6 +89,7 @@ A `set.toComma` alapértelmezett `false`, így ha magyar Excel miatt szükséges
 :::
 
 A beállításokon kívül itt kell elindítani a szenzorokat és a kommunikációkat:
+
 - Serial kommukáció setén -> `Serial.begin()`
 - I2C kommonikáció esetén -> `Wire.begin()`
 - `LogB Cloud` és `UnixTime()` esetén -> `WiFi.begin()`
@@ -104,10 +105,10 @@ A `UnixTime()` használatához internet szükséges, ez jelenleg `ESP8266` wifi 
 :::
 
 ```c
-Serial.begin(115200); 
+Serial.begin(115200);
 Wire.begin();
 WiFi.begin("/* wifi SSID */", "/* wifi jelszava */");
-while (WiFi.status() != WL_CONNECTED) {delay(50);} 
+while (WiFi.status() != WL_CONNECTED) {delay(50);}
 lightMeter.begin();
 //ezek a LogB Cloud használatához kellenek
 set.device_id="/* eszköz azonosítója */";
@@ -119,11 +120,10 @@ set.toComma=true;
 CreateName(UnixTime(1)); // GMT+1
 ...
 ```
+
 ::: tip Serial kommunikáció
 A soros kommunikáció baud rátája 115200-re van állítva alapból, de igény esetén , megváltoztatható.
 :::
-
-
 
 ### Második kör
 
@@ -148,6 +148,7 @@ Ha a megadott miliszekundumnyi időtartamnál tovább tart a mérés, azonal elk
 Ha még nem érte el, várakozik amíg eléri.
 
 :::
+
 1. Az `AddData()` függvény segítségével tároljuk a kiolvasott szenzor értékeket.
     - Első paraméternek a szensor standard nevét kell használni.
     - Második paraméter a használni kívánt fejléc.
@@ -159,6 +160,7 @@ Ha még nem érte el, várakozik amíg eléri.
 
  ::: warning Fontos
  Az első `AddData()`-ban be kell állítani az időt. Ezt úgy tehetjük meg, hogy a `Time()`-nak egy `DateTime`-ot adunk.
+
 - Ehhez a már fentebb említett `UnixTime()` függvényt is használhatjuk.
 - Természetesen RTC-ből nyert idő is használható. (`rtc.now()`)
 - Haa nincs időmérésre lehetőségünk a mérés indításától eltelt másodpercekért a `NoTime()` függvényt kell a `Time()`-ba írni.

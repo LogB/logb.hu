@@ -35,3 +35,4 @@
 - [Streaming](http://arduiniana.org/libraries/streaming/)
 - [PString](http://arduiniana.org/libraries/PString/)
 - [Watchdog timer / sleep?](https://learn.sparkfun.com/tutorials/reducing-arduino-power-consumption/all#saving-power-with-software)
+- [AmCharts](https://www.amcharts.com)

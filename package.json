@@ -6,8 +6,10 @@
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.0.0-alpha.44",
     "@vuepress/plugin-clean-urls": "^1.0.0-alpha.44",
+    "@vuepress/plugin-google-analytics": "^1.0.0-alpha.44",
     "@vuepress/plugin-i18n-ui": "^1.0.0-alpha.44",
     "@vuepress/plugin-pwa": "^1.0.0-alpha.44",
-    "vuepress": "^1.0.0-alpha.44"
+    "vuepress": "^1.0.0-alpha.44",
+    "vuepress-plugin-flowchart": "^1.4.3"
   }
 }

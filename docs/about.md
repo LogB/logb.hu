@@ -36,3 +36,8 @@ Jelenleg egy szabványon dolgozunk, amivel meg lehet pontosan határozni a mér�
 
 Az Arduinora írandó program automatikusan generálható.\
 Sok ember emiatt nem fogott bele a saját projektjébe. Eddig.
+[App.LogB.hu/generator](https://App.LogB.hu/generator)
+
+## LogB Cloud
+
+Tekintsd meg távolról, oszd meg, és analizáld a LogB-s mérésed.

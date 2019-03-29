@@ -31,7 +31,7 @@ module.exports = {
                     { text: 'A LogB állapota', link: '/status.md' },
                     { text: 'Kövessd a LogB-t!', link: '/follow-us.md' },
                     { text: 'Kapcsolat', link: '/contact.md' },
-                    { text: 'LogB Cloud', link: 'https://cloud.logb.hu' },
+                    { text: 'LogB App', link: 'https://app.logb.hu' },
 
                 ]
             }
@@ -66,7 +66,7 @@ module.exports = {
     //                 { text: 'The status of LogB', link: '/state/' },
     //                 { text: 'Follow LogB', link: '/follow-us/' },
     //                 { text: 'Contact Us', link: '/contact-us/' },
-    //                 { text: 'LogB Cloud', link: 'https://cloud.logb.hu' },
+    //                 { text: 'LogB App', link: 'https://app.logb.hu' },
 
     //             ]
     //         }

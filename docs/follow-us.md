@@ -2,7 +2,7 @@
 
 ## 1. Nézz vissza gyakran
 
-Hamarosan rengeteg tartalom fog ezen a weboldalom megjelenni. A [LogB Cloud](https://cloud.logb.hu) bétába lépett, így mostantól több időt tudunk fordítunk az alapok befejezésére:
+Hamarosan rengeteg tartalom fog ezen a weboldalom megjelenni. A [LogB App](https://app.logb.hu) bétába lépett, így mostantól több időt tudunk fordítunk az alapok befejezésére:
 
 [A LogB állapota](/status.md)
 

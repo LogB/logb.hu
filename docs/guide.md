@@ -48,7 +48,7 @@ BH1750 lightMeter;
 
 ::: warning Fontos
 Amennyiben nincs az Arduino programhoz hozzáadva a szükséges könyvtár, akkor az `.ino` fájl mellé másolva is használhatjuk.
-Ebben az esetben a kód így változik:
+Ebben az esetben a könyvtárak neve nem `<>` között, hanem `""`:
 
  ```c
 #include "logb.h"
@@ -73,7 +73,7 @@ Itt lehet meghatározni a LogB beállításait:
 - Mentés helyét
   - a -> Serial
   - b -> SD
-  - c -> LogB Cloud
+  - c -> LogB Cloud (app.logb.hu)
   - ...
 - A fájlban történő elválasztójelet
 - Lehetőség van a tizedespont vesszőre történő cseréjére
@@ -84,7 +84,7 @@ Ha a kirás csak `Serial`-ra történik nem szükséges fájl nevet lértehozni.
 :::
 
 ::: warning Fontos
-Az elválasztás jele (`set.seperate`) alapértelmezetten `;`. Ha nem szeretnénk megváltoztatni, akkor a `setup()`-ban nem kell beállítani. 
+Az elválasztás jele (`set.seperate`) alapértelmezetten `;`. Ha nem szeretnénk megváltoztatni, akkor a `setup()`-ban nem kell beállítani.
 A `set.toComma` alapértelmezett `false`, így ha magyar Excel miatt szükséges a vessző ezt `true`-ra kell állítani.
 :::
 
@@ -196,7 +196,6 @@ A szenzor összes (mérésnél illetve a hardver beépítésénél) fontos tulaj
 - Feszültség
 - Kapcsolódás
   - Típusa
-  - címe (opcionális, i2c esetében)
 - Mérés (= beérkező adat)
   - Mértékegysége
   - Változó típusa
@@ -205,27 +204,36 @@ Egy példa:
 
 ```json
 {
-    "name": "SHT21",
-    "voltage": "3v3",
-    "connection": {
-        "type": "I2C",
-        "address": "0x40"
-    },
-    "meas": {
-        "temp": {
-            "unit": "C",
-            "type": "float"
-        },
-        "hum":{
-            "unit": "RH%",
-            "type": "float"
+    "SHT21": {
+        "name": "SHT21",
+        "voltage": "3v3",
+        "connection": "I2C",
+        "code": {
+            "include": "Sodaq_SHT2x.h",
+            "preSetup": "",
+            "setup": {
+                "begin": "Wire"
+            },
+            "values": {
+                "TEMP": {
+                    "unit": "C",
+                    "getValue": "SHT2x.GetTemperature()"
+                },
+                "HUM": {
+                    "unit": "RH%",
+                    "getValue": "SHT2x.GetHumidity()"
+                },
+                "DEW": {
+                    "unit": "C",
+                    "getValue": "SHT2x.GetDewPoint()"
+                }
+            }
         }
-    }
 }
 ```
 
 ::: warning Fontos
-A mértékegységeket a szenzor könyvtára határozza meg. A nyers adatok módosítása máshol történik.
+A mértékegységeket a szenzor könyvtára határozza meg. A nyers adatok módosítása később történhet.
 :::
 
 ::: tip Több azonos szenzor
@@ -243,17 +251,16 @@ Példa bemenet:
 - Mért adata
   - Hőmérséklet
 
-Ennek a szenzornak a standard-beli neve: `SHT21-3V3-I2C-TEMP`
+Ennek a szenzornak a standard-beli neve: `SHT21-TEMP`
 
 ::: tip Több érték egy egységből
 Több érték is kiolvasható egy egységből körönként. Minden kiolvasott adat más más szabványnévvel szerepel a LogB-ben:\
-`SHT21-3V3-I2C-TEMP`\
-`SHT21-3V3-I2C-HUM`
+`SHT21-TEMP` & `SHT21-HUM`
 :::
 
 ::: warning Azonos adat, azonos körben töbször:
-Ha szükség van rá lehetséges ugyan azt a szenzornak ugyan azt a mért adatát kikérni egy körben, de az azonosítójának egyedinek kell lennie, különben felülírja az előző mért adatot! \
-(Egy körben nem kéne kikérni ugyan azt az adatot, hiszen a mérés pillanatszerű.)
+Ha szükség van rá, lehetséges ugyan azt a szenzornak ugyan azt a mért adatát kikérni egy körben, de az azonosítójának egyedinek kell lennie, különben felülírja az előzőleg mért, azonos azonosítóval rendelkező adatot! \
+(Egy körben nem kéne kikérni ugyan azt, hiszen a mérés pillanatszerű.)
 :::
 
 ## ESP8266-os alaplapok használata

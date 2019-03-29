@@ -4,7 +4,7 @@ sidebar: auto
 
 # Fejlesztői útmutató
 
-::: warning Előzetes betekintés :construction:
+::: warning Előzetes betekintés
 A fejlesztői útmutató, illetve maga a LogB is fejlesztés alatt áll. A rendszer jelenleg nem használható kritikus feladatok ellátására. [Projektek státusza](/status.md#projektek-allapota)
 :::
 

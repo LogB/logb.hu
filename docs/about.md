@@ -23,7 +23,7 @@ A LogB segít a:
 Jelenleg egy szabványon dolgozunk, amivel meg lehet pontosan határozni a mérőeszközök felépítését.\
 [Fejlesztői útmutató](/guide.md)
 
-## Miért kell a Standard?
+## Miben segít a Standard?
 
 - Időt takarít meg
   - Egységes, moduláris rendszer.
@@ -41,3 +41,5 @@ Sok ember emiatt nem fogott bele a saját projektjébe. Eddig.
 ## LogB Cloud
 
 Tekintsd meg távolról, oszd meg, és analizáld a LogB-s mérésed.
+A LogB Cloud segítségével megtekinthető távolról és megoszthatók a LogB-vel készített, (és éppen folyó!) méréseket.
+Nyílvános mérések: [App.LogB.hu/shared](https://App.LogB.hu/shared)

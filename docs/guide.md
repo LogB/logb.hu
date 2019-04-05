@@ -24,7 +24,7 @@ A LogB mérési folyamata két 'körből' áll:
   - Adatsor küldése
 
 ::: tip Arduinoval megfeleltetés
-Igen, az első kör a `setup()`-ban, a második pedig a `loop()`-ban fut le.
+Igen, az első kör a `setup()`-ban, a második pedig a `loop()`-ban fut le./
 :::
 
 ### Nulladik kör
@@ -48,7 +48,7 @@ BH1750 lightMeter;
 
 ::: warning Fontos
 Amennyiben nincs az Arduino programhoz hozzáadva a szükséges könyvtár, akkor az `.ino` fájl mellé másolva is használhatjuk.
-Ebben az esetben a könyvtárak neve nem `<>` között, hanem `""`:
+Ebben az esetben a könyvtárak neve nem `<>` között, hanem `""` kell hogy legyen:
 
  ```c
 #include "logb.h"
@@ -62,30 +62,25 @@ BH1750 lightMeter;
 
 ### Első kör
 
-#### Beállítások megadása
+#### LogB beállítások megadása
 
-Itt lehet meghatározni a LogB beállításait:
+| Leírás                              | Kód                | Típus      | Alapértelmezett érték       |
+| ----------------------------------- | ------------------ | ---------- | --------------------------- |
+| Mérési időköz                       | `set.timeInterval` | `long`     | `0` (= nem vár)             |
+| Kimenetek                           | `set.where`        | `String`   | `null`   (= nincs kimenet!) |
+| LogB Cloud Device_ID                | `set.device_id`    | `String`   | `null`                      |
+| LogB Cloud Pin                      | `set.pin`          | `String`   | `null`                      |
+| CSV elválasztó karakter             | `set.separate`     | `String`   | `;`                         |
+| Tizedespont vesszőre\való cseréjére | `set.toComma`      | `bool`     | `false`                     |
+| Fájl név                            | `CreateName()`     | `DateTime` | `null`                      |
 
-- Eszköz
-  - Nevét
-  - Jelszavát
-- A mérési időközt
-- Mentés helyét
-  - a -> Serial
-  - b -> SD
-  - c -> LogB Cloud (app.logb.hu)
-  - ...
-- A fájlban történő elválasztójelet
-- Lehetőség van a tizedespont vesszőre történő cseréjére
-- Itt kell lértehozni a fájl nevét
-
-::: warning Fontos
-Ha a kirás csak `Serial`-ra történik nem szükséges fájl nevet lértehozni.
+::: tip Az alapértelmezett értékek
+Ha nem szeretnénk változtatni az alapértelmezett értékeken, nem kell a kódba írni.
 :::
 
-::: warning Fontos
-Az elválasztás jele (`set.seperate`) alapértelmezetten `;`. Ha nem szeretnénk megváltoztatni, akkor a `setup()`-ban nem kell beállítani.
-A `set.toComma` alapértelmezett `false`, így ha magyar Excel miatt szükséges a vessző ezt `true`-ra kell állítani.
+::: tip Tipp
+Ha a kirás csak `Serial`-ra történik nem szükséges fájl nevet lértehozni.
+Viszont bármelyik másikhoz **kötelező**
 :::
 
 A beállításokon kívül itt kell elindítani a szenzorokat és a kommunikációkat:
@@ -95,14 +90,16 @@ A beállításokon kívül itt kell elindítani a szenzorokat és a kommunikáci
 - `LogB Cloud` és `UnixTime()` esetén -> `WiFi.begin()`
 - Ezeken kívül pedig a kiválasztott szenzorok elindítasa szükséges
 
-A mérés nevét a `CreateName()` segítségével lehet elkészíteni.
+A mérés nevét ahogy az a [táblázatban](/guide.md#logb-beallitasok-megadasa) is szerepel, a `CreateName()` függvény segítségével lehet elkészíteni.
 
-- A mérés neve az eszköz nevéből és egy számból áll. Az azonosító számhoz javasoljuk az `UnixTime()` használatát.
-  - A `UnixTime()` paramétere a GMT-től való eltérés. (Magyarország esetében télen 1, nyáron 2)
+- A mérés neve az eszköz nevéből és egy számból áll. Az azonosító számnak **egyedinek** kell lennie, ehhez javasoljuk az `UnixTime()` használatát.
+  - A `UnixTime()` paramétere a GMT-től való eltérés. (Magyarország esetében télen UTC+`1`, nyáron UTC+`2`, San Fransisco például télen UTC`-8`, nyáron UTC`-7`)
 
 ::: warning Fontos
 A `UnixTime()` használatához internet szükséges, ez jelenleg `ESP8266` wifi modul használatával lehetséges.
 :::
+
+Példa kód:
 
 ```c
 Serial.begin(115200);
@@ -122,7 +119,7 @@ CreateName(UnixTime(1)); // GMT+1
 ```
 
 ::: tip Serial kommunikáció
-A soros kommunikáció baud rátája 115200-re van állítva alapból, de igény esetén , megváltoztatható.
+A soros kommunikáció baud rátája 115200-re van állítva alapból, de igény esetén megváltoztatható.
 :::
 
 ### Második kör

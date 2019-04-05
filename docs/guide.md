@@ -187,6 +187,8 @@ Arduino-s szenzorok könyvtárai egymáshoz hasonló adatformában adják ki mos
 
 #### Pontos szenzor-definíciók
 
+A fájl elérhető [itt](https://api.logb.hu/v1.1/inputs.json)
+
 A szenzor összes (mérésnél illetve a hardver beépítésénél) fontos tulajdonságát meghatározzuk:
 
 - Név
@@ -197,7 +199,7 @@ A szenzor összes (mérésnél illetve a hardver beépítésénél) fontos tulaj
   - Mértékegysége
   - Változó típusa
 
-Egy példa:
+Egy részlet:
 
 ```json
 {
@@ -226,7 +228,8 @@ Egy példa:
                 }
             }
         }
-}
+    },
+    ...
 ```
 
 ::: warning Fontos
@@ -265,7 +268,7 @@ Ha szükség van rá, lehetséges ugyan azt a szenzornak ugyan azt a mért adat�
 1. Az további Alaplap-kezelő URL megadása.
     - Arduino program megnyitás
     - Fájl
-    - Beállítások `CTRL + ,`
+    - Beállítások `CTRL` + `,`
     - További Alaplap-kezelő URL-ek: <span class="select_all">`http://arduino.esp8266.com/stable/package_esp8266com_index.json`</span>
 2. Alaplap letöltése és telepítése
     - Eszközök
